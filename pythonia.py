@@ -5,23 +5,23 @@ import os
 # audio
 from pygame import mixer 
  
-
 # Main directories
 musicDir = os.path.join("Resources", "Music", "");
 imageDir = os.path.join("Resources", "Images", "");
 
- 
-# Starting the mixer with titlescreen music
-mixer.init() 
-mixer.music.load(os.path.join(musicDir, "TitleScreen.mp3"))
-mixer.music.set_volume(0.7) 
-mixer.music.play(-1, 0 ) # Play infinite loop
- 
+  
 # define a main function
 def main():
      
     # initialize the pygame module
     pygame.init()
+    
+    # Starting the mixer with titlescreen music
+    mixer.init() 
+    mixer.music.load(os.path.join(musicDir, "TitleScreen.mp3"))
+    mixer.music.set_volume(0.7) 
+    mixer.music.play(-1, 0 ) # Play infinite loop
+
     # load and set the logo
     logo = pygame.image.load(os.path.join(imageDir,"winThumbnail.png"))
     pygame.display.set_icon(logo)
