@@ -15,7 +15,7 @@ def menuTitleScreen(pygame, display, mixer):
     mixer.init() 
     mixer.music.load(which("TitleScreen.mp3"))
     mixer.music.set_volume(0.7) 
-#    mixer.music.play(-1, 0 ) # Play infinite loop
+    mixer.music.play(-1, 0 ) # Play infinite loop
     
     # define a variable to control the main loop
     running = True
@@ -24,6 +24,10 @@ def menuTitleScreen(pygame, display, mixer):
     imgTitle    = pygame.image.load(which("title.png"));
     imgNewGame  = pygame.image.load(which("newgame.png"));
     imgLoadGame = pygame.image.load(which("savedgame.png"));
+    
+    # Resize menus
+    imgNewGame  = pygame.transform.scale(imgNewGame,  (int(imgNewGame.get_width()*0.35),  int(imgNewGame.get_height()*0.35)))
+    imgLoadGame = pygame.transform.scale(imgLoadGame, (int(imgLoadGame.get_width()*0.35), int(imgLoadGame.get_height()*0.35)))
     
     # Initial title image location
     x = 200
@@ -38,6 +42,10 @@ def menuTitleScreen(pygame, display, mixer):
         pygame.display.update()
         clock.tick(40) # Limit to 40 frames per sec
         
+    # Now show menu options
+    display.blit(imgNewGame,  (400,500))    
+    display.blit(imgLoadGame, (400,600))    
+    pygame.display.update()    
     
     # main loop
     while running:
