@@ -1,0 +1,15 @@
+install miniconda (3.8)
+
+Open Anaconda Prompt (as administrator)
+
+conda create -n work python=3.7
+conda install anaconda-client
+anaconda search -t conda pygame
+conda activate work
+conda install --channel https://conda.anaconda.org/delichon pygame
+conda install numpy
+conda install spyder
+
+Create a shortcut to spyder:
+C:\ProgramData\Miniconda3\pythonw.exe C:\ProgramData\Miniconda3\cwp.py C:\ProgramData\MiniConda3\envs\work C:\ProgramData\Miniconda3\envs\work\pythonw.exe C:\ProgramData\Miniconda3\envs\work\Scripts\spyder-script.py
+

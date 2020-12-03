@@ -1,0 +1,2 @@
+# Don't check in cached copies
+*.pyc
